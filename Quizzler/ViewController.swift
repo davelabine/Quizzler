@@ -61,17 +61,16 @@ class ViewController: UIViewController {
             
             alert.addAction(restartAction)
             present(alert, animated: true, completion: nil)
-            
         }
     }
     
     
     func checkAnswer() {
         if (allQuestions.list[questionNumber].answer == pickedAnswer) {
-            print("You got it right!")
+            ProgressHUD.showSuccess("Correct!")
             score = score + 1
         } else {
-            print("You got it wrong!")
+            ProgressHUD.showError("Wrong.  Try again!")
         }
     }
     
